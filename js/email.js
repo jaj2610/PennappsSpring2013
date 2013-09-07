@@ -1,5 +1,7 @@
 filepicker.setKey('AQ6kiiJGJS1iZl7OgXeAPz');
 
+var sendgrid = require('sendgrid')('jaj2610', 'statefarm');
+var Email = sendgrid.Email;
 var emailObject = new Email();
 
 function addAttachment()
@@ -25,14 +27,11 @@ function addAttachment()
 
 function sendEmail()
 {
-	var emailObject = ({
-		to: document.getElementById('to').value,
-		from: document.getElementById('from').value,
-		subject: document.getElementById('subject').value,
-		text: document.getElementById('body').value,
-	});
+	emailObject.to = document.getElementById('to').value;
+	emailObject.from = document.getElementById('from').value;
+	emailObject.subject = document.getElementById('subject').value;
+	emailObject.text = document.getElementById('body').value;
 
-	var sendgrid = require('sendgrid')('jaj2610', 'statefarm');
 	sendgrid.send(emailObject, function(err, json) {
 		if (!err) { return console.error(err); }
 			console.log(err);
