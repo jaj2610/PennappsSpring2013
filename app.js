@@ -33,6 +33,7 @@ app.get('/logout', logout.index);
 app.get('/dashboard', dashboard.index);
 
 app.get('/email.html', email.sendForm);
+app.post('/sendEmail', email.sendEmail);
 
 
 // Start the site on port 3000
