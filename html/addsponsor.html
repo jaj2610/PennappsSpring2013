@@ -2,27 +2,67 @@
 <html>
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Add Sponsor | ClubHub</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Add Sponsor | ClubHub</title>
 
-	<link href="../css/add.css" rel="stylesheet" type="text/css">
+    <link href="../css/add.css" rel="stylesheet" type="text/css">
     <script language="javascript" type="text/javascript" src="../js/jquery.js"></script>
     <script language="javascript" type="text/javascript" src="../js/login.js"></script>
+    <script>
+    $(function() {
+        var scntDiv = $('#p_scents');
+        var i = $('#p_scents p').size() + 1;
+
+        $('#addScnt').live('click', function() {
+            $('<p><label for="p_scnts"><input type="text" id="name" size="20" name="name_' + i + '" value="" placeholder="Name" /></label> 
+                <a href="#" id="remScnt">Remove</a></p>').appendTo(scntDiv);
+            i++;
+            $('<p><label for="p_scnts"><input type="text" id="mail" size="20" name="mail_' + i + '" value="" placeholder="Email" /></label> 
+                <a href="#" id="remScnt">Remove</a></p>').appendTo(scntDiv);
+            i++;
+            $('<p><label for="p_scnts"><input type="text" id="number" size="20" name="number_' + i + '" value="" placeholder="Number" /></label> 
+                <a href="#" id="remScnt">Remove</a></p>').appendTo(scntDiv);
+            i++;
+            return false;
+        });
+
+        $('#remScnt').live('click', function() {
+            if (i > 2) {
+                $(this).parents('p').remove();
+                i--;
+            }
+            return false;
+        });
+    });
+    </script>
 </head>
+
 <body>
 
-<div id="add-box">
-    <form method="POST" action="dashboard/addSponsor">
-    	<p id="text">Company: <input type="text" name="company" id="company"></p>
-    	<p id="text">Corporate contact: <input type="text" name="contact" id="contact"></p>
-    	<p id="text">Corporate email: <input type="text" name="email" id="email"></p>
-    	<p id="text">Phone number: <input type="text" name="phine" id="phone"></p>
-    	<p id="text">Club: <input type="text" name="club" id ="club"></p>
-        
-		<div id="buttons">
-			<input type="submit" value="Add" id="login-button">
-	    </div>
-    </form>
-    </div> 
-    </body>
+    <div id="add-box">
+        <form method="POST" action="dashboard/addSponsor">
+            <p id="text">Company:
+                <input type="text" name="company" id="company">
+            </p>
+            <p id="text">Corporate contact:
+                <input type="text" name="contact" id="contact">
+            </p>
+            <p id="text">Corporate email:
+                <input type="text" name="email" id="email">
+            </p>
+            <p id="text">Phone number:
+                <input type="text" name="phone" id="phone">
+            </p>
+            <a href="#" id="addScnt">Add another corporate contact</a>
+            <p id="text">Club:
+                <input type="text" name="club" id="club">
+            </p>
+
+            <div id="buttons">
+                <input type="submit" value="Add" id="login-button">
+            </div>
+        </form>
+    </div>
+</body>
+
 </html>
