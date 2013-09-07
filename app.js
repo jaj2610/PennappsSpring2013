@@ -1,10 +1,10 @@
 var express = require('express')
   , monogo = require('mongodb');
 
-// Controlers
-var login = require('./controlers/login')
-  , logout = require('./controlers/logout')
-  , dashboard = require('./controlers/dashboard');
+// Controllers
+var login = require('./controllers/login')
+  , logout = require('./controllers/logout')
+  , dashboard = require('./controllers/dashboard');
 
 var app = express();
 app.use(express.bodyParser());
