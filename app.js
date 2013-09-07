@@ -6,6 +6,8 @@ var login = require('./controlers/login');
 
 var app = express();
 app.use(express.bodyParser());
+app.use(express.cookieParser('pEnNaPpSF13L!'));
+app.use(express.session({secret: 'pEnNaPpSF13L!'}));
 app.use(express.logger('dev'));
 
 // Setup the views
