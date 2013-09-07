@@ -5,6 +5,7 @@ var express = require('express')
 var login = require('./controlers/login');
 
 var app = express();
+app.use(express.bodyParser());
 app.use(express.logger('dev'));
 
 // Setup the views
@@ -18,6 +19,10 @@ app.use('/js', express.static(__dirname + '/js'));
 
 // Routes
 app.get('/', login.index);
+app.get('/registration.html', login.registration);
+app.post('/login', login.verify);
+app.post('/register', login.register);
+
 
 // Start the site on port 3000
 app.listen(3000);
