@@ -13,13 +13,12 @@ exports.registration = function(req, res) {
 }
 
 exports.register = function(req, res) {
-   console.log('Checking for user with username ' + req.body.username);
-   console.log(db.users.count({ 'username' : req.body.username }));
+   var username = req.body.username.toLowerCase();
+   console.log('Checking for user with username ' + username);
 
-   db.users.find({ 'username' : req.body.username }).count(function(err, count) {
-      if (count == undefined || count == 0) {
+   db.users.find({ 'username' : username }).count(function(err, count) {
+      if (count == 0) {
          // New user
-         var username = req.body.username;
          var password = SHA3(req.body.password).toString(CryptoJS.enc.Hex);
 
          db.users.save({ 'username' : username, 'password' : password });
@@ -34,9 +33,9 @@ exports.register = function(req, res) {
 }
 
 exports.verify = function(req, res) {
-   console.log('Trying to log in user ' + req.body.username);
-   var username = req.body.username;
+   var username = req.body.username.toLowerCase();
    var password = SHA3(req.body.password).toString(CryptoJS.enc.Hex);
+   console.log('Trying to log in user ' + username);
 
    db.users.find({ 'username' : username, 'password' : password }).count(function(err, count) {
       if (count == 1) {
