@@ -1,0 +1,8 @@
+.header_p1 {
+    /* background: white; */
+    padding-bottom: 10px;
+    position: relative;
+    top: 0;
+    left: 50%;           /* Start at 50% of browser window */
+    margin-left: -100px; /* Go half of width to the left, centering the element */
+}
