@@ -2,6 +2,30 @@
 // Email: jaj5333@psu.edu
 // Date: 9.7.2013
 
+function j_security_check()
+{
+    var user = document.getElementById('username').value;
+    var pass = document.getElementById('password').value;
+
+    if (user == "jake" && pass == "1234")
+    {
+        success();
+    }
+    else
+    {
+        failure();
+    }
+}
+
+function success()
+{
+    window.location.href = "../html/next.html";
+}
+
+function failure()
+{
+    window.location.href = "../html/error.html";
+}
 
 /*
 $(function () {

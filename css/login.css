@@ -65,6 +65,38 @@ background: black;
 color: white;
 }
 
+input[type="button"] {
+border: none;
+position: relative;
+left: 50px;
+background: transparent;
+color: white;
+}
+
+input[type="button"]:hover {
+border: thin #999999 outset;
+position: relative;
+left: 50px;
+filter:alpha(opacity=50);-moz-opacity:.5;opacity:.5;
+background: black;
+color: white;
+}
+input[type="button"]:focus  {
+border: thin #000000 solid;
+position: relative;
+left: 50px;
+background: black;
+color: white;
+}
+input[type="button"]:focus:hover {
+border: thin #000000 solid;
+position: relative;
+left: 50px;
+filter:alpha(opacity=100);-moz-opacity:1;opacity:1;
+background: black;
+color: white;
+}
+
 #box
 {
 position: absolute;
