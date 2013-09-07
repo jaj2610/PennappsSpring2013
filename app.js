@@ -4,7 +4,8 @@ var express = require('express')
 // Controllers
 var login = require('./controllers/login')
   , logout = require('./controllers/logout')
-  , dashboard = require('./controllers/dashboard');
+  , dashboard = require('./controllers/dashboard')
+  , email = require('./controllers/email');
 
 var app = express();
 app.use(express.bodyParser());
@@ -30,6 +31,8 @@ app.post('/register', login.register);
 app.get('/logout', logout.index);
 
 app.get('/dashboard', dashboard.index);
+
+app.get('/email.html', email.sendForm);
 
 
 // Start the site on port 3000
