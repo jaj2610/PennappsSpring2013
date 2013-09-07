@@ -1,6 +1,6 @@
 // Author: Jacob Jones
 // Email: jaj5333@psu.edu
-// Date: 9.7.2013
+// Date: 9.8.2013
 
 function j_security_check()
 {
