@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Email</title>
+	<script type="text/javascript" src="http://api.filepicker.io/v1/filepicker.js"></script>
+	<link href="../css/login.css" rel="stylesheet" type="text/css">
+    <script language="javascript" type="text/javascript" src="../js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/email.js"></script>
+    
+</head>
+<body>
+
+    <div id="login-box">
+    	<p id="text">To: <input type="text" name="to" id="to"></p>
+
+        <p id="text">From: <input type="text" name="from" id="from"></p>
+
+        <p id="text">Subject: <input type="text" name="subject" id="subject"></p>
+
+        <p id="text">Body: <input type="text" name="body" id="body"></p>
+
+		<div id="buttons">
+			<input type="button" value="Send" id="send-button" onClick="sendEmail()">
+			<input type="button" value="Attach" id="attach-button" onClick="addAttachment()">
+	    </div>
+    </div> 
+
+</body>
+</html>
