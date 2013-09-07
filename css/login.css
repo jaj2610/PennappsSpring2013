@@ -1,5 +1,10 @@
-body {
-	background-color: #889999;
+body
+{ 
+	background:url('../img/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .header_p1 {
@@ -112,11 +117,11 @@ color: #445555;
 
 #box
 {
-position: absolute;
-width: 18%;
-height: 21%;
+position: relative;
+width: 250px;
+height: 150px;
 left: 42%;
-top: 40%;
+top: 200px;
 -moz-border-radius: 15px;
 border-radius: 15px;
 background-color: #DDDDCC;
@@ -124,11 +129,14 @@ background-color: #DDDDCC;
 
 #box_error
 {
-position: absolute;
-width: 50%;
-height: 30%;
-left: 39%;
-top: 65%;
+position: relative;
+width: 250px;
+height: 150px;
+left: 42%;
+top: 200px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+background-color: #DDDDCC;
 }
 
 #text
