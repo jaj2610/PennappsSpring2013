@@ -4,7 +4,7 @@ function addAttachment() {
    filepicker.pick({
       mimetypes: ['image/*', 'text/plain'],
       container: 'window',
-      services:['COMPUTER', 'DROPBOX', 'FACEBOOK', 'GITHUB', 'GOOGLE_DRIVE', 'EVERNOTE', 'GMAIL', 'WEBCAM'],
+      services:['COMPUTER', 'DROPBOX', 'SKYDRIVE', 'GOOGLE_DRIVE', 'GITHUB', 'EVERNOTE', 'FACEBOOK', 'GMAIL', 'WEBCAM'],
    },
    function(InkBlob) {
       console.log(JSON.stringify(InkBlob));
