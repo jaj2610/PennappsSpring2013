@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Add Sponsor</title>
+
+	<link href="../css/login.css" rel="stylesheet" type="text/css">
+    <script language="javascript" type="text/javascript" src="../js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/login.js"></script>
+</head>
+<body>
+
+<div id="login-box">
+    <form method="POST" action="dashboard/addSponsor">
+    	<p id="text">Company: <input type="text" name="co" id="co"></p>
+    	<p id="text">Corporate contact: <input type="text" name="contact" id="corporate"></p>
+    	<p id="text">Corporate email: <input type="text" name="email" id="email"></p>
+    	<p id="text">Phone number: <input type="text" name="number">
+    	</p>
+    	<p id="text">Club: <input type="text" name="club"></p>
+
+/* NEED TO CHANGE BUTTONS BUT I DON'T KNOW WHAT YOU WANT */
+		<div id="buttons">
+			<input type="submit" value="Log In" id="login-button">
+			<input type="button" value="Register" id="register-button" onClick="window.location.href='registration.html'">
+	    </div>
+    </form>
+    </div> 
+    </body>
+</html>
