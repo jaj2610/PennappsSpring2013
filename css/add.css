@@ -1,0 +1,62 @@
+body
+{ 
+  padding-top: 10%;
+	background:url('../img/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 7%;
+}
+
+input[type="text"], input[type="password"] {
+border: 2px solid #32829D;
+background-color: white;
+}
+
+#buttons {
+  text-align: center;
+}
+
+#buttons input {
+  border: none;
+  background: #889999;
+  color: #445555;
+  padding: 5px;
+  margin: 0 10px;
+}
+
+#add-box
+{
+  margin: auto;
+  padding: 20px 10px;
+  width: 500px;
+  text-align: center;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background-color: #EEEEEE;
+  box-shadow: 0 0 2em black;
+}
+
+#box_error
+{
+  position: relative;
+  width: 250px;
+  height: 150px;
+  left: 42%;
+  top: 200px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background-color: #DDDDCC;
+}
+
+#text
+{
+  font-family:arial;
+  color: #445555;
+  font-size:14px;
+}
