@@ -32,7 +32,7 @@ function sendEmail()
 		text: document.getElementById('body').value,
 	});
 
-	var sendgrid = require('sendgrid')(jaj2610, statefarm);
+	var sendgrid = require('sendgrid')('jaj2610', 'statefarm');
 	sendgrid.send(emailObject, function(err, json) {
 		if (!err) { return console.error(err); }
 			console.log(err);
