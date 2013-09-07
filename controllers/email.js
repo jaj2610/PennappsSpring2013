@@ -29,8 +29,7 @@ exports.sendEmail = function(req, res) {
       }
 
       sendgrid.send(emailObject, function(err, json) {
-         if (!err) { return console.error(err); }
-         console.log(err);
+         if (err) { console.log(err); }
       });
 
       res.render('email.html');
