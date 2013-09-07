@@ -1,9 +1,8 @@
-// Author: Jacob jones
+// Author: Jacob Jones
 // Email: jaj5333@psu.edu
-// Date: 6.11.2013
-// Please contact with any questions
-//
-// Maxwell-Boltzmann Plot
+// Date: 9.7.2013
+
+
 /*
 $(function () {
 
