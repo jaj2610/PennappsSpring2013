@@ -8,5 +8,8 @@ function sendEmail(toList, userEmail, subjectText, emailText)
 		from: userEmail,
 		subject: subjectText,
 		text: emailText
+	}, function(err, json) {
+		if (!err) { return console.error(err); }
+			console.log(err);
 	});
 }
