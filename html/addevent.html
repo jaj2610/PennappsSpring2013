@@ -3,25 +3,21 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Login to ClubHub</title>
+	<title>Add Event | ClubHub</title>
 
 	<link href="../css/login.css" rel="stylesheet" type="text/css">
-    /* MUST CHANGE JS FILES */
     <script language="javascript" type="text/javascript" src="../js/jquery.js"></script>
     <script language="javascript" type="text/javascript" src="../js/login.js"></script>
 </head>
 <body>
 
 <div id="login-box">
-    <form method="POST" action="dashboard/addSponsor">
-    	<p id="text">Event name: <input type="text" name="event" id="event"></p>
-    	<p id="text">Donation amount: <input type="text" name="contact"></p>
-    	<p id="text">Date: <input type="text" name="date"></p>
-
-/* NEED TO CHANGE BUTTONS BUT I DON'T KNOW WHAT YOU WANT */
+    <form method="POST" action="dashboard/addEvent">
+    	<p id="text">Event name: <input type="text" name="name" id="name"></p>
+    	<p id="text">Donation amount: <input type="text" name="amount" id="amount"></p>
+    	<p id="text">Date: <input type="text" name="date" id="date"></p>
 		<div id="buttons">
-			<input type="submit" value="Log In" id="login-button">
-			<input type="button" value="Register" id="register-button" onClick="window.location.href='registration.html'">
+			<input type="submit" value="Add" id="login-button">
 	    </div>
     </form>
     </div> 
