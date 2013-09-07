@@ -4,7 +4,12 @@ var SHA3 = require('crypto-js/sha3');
 
 // Render basic login page
 exports.index = function(req, res) {
-   res.render('login.html');
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else {
+      res.redirect('/dashboard');
+   }
 }
 
 // Render a basic register page
@@ -40,9 +45,11 @@ exports.verify = function(req, res) {
    db.users.find({ 'username' : username, 'password' : password }).count(function(err, count) {
       if (count == 1) {
          console.log('Authentication successful.');
+         req.session.username = username;
          res.redirect('/dashboard');
       } else {
          console.log('Authentication failed!');
+         req.session.username = null;
          res.redirect('/');
       }
    });

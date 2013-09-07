@@ -2,10 +2,13 @@ var express = require('express')
   , monogo = require('mongodb');
 
 // Controlers
-var login = require('./controlers/login');
+var login = require('./controlers/login')
+  , logout = require('./controlers/logout');
 
 var app = express();
 app.use(express.bodyParser());
+app.use(express.cookieParser('pEnNaPpSF13L!'));
+app.use(express.session({secret: 'pEnNaPpSF13L!'}));
 app.use(express.logger('dev'));
 
 // Setup the views
@@ -22,6 +25,8 @@ app.get('/', login.index);
 app.get('/registration.html', login.registration);
 app.post('/login', login.verify);
 app.post('/register', login.register);
+
+app.get('/logout', logout.index);
 
 
 // Start the site on port 3000
