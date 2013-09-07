@@ -3,7 +3,8 @@ var express = require('express')
 
 // Controlers
 var login = require('./controlers/login')
-  , logout = require('./controlers/logout');
+  , logout = require('./controlers/logout')
+  , dashboard = require('./controlers/dashboard');
 
 var app = express();
 app.use(express.bodyParser());
@@ -27,6 +28,8 @@ app.post('/login', login.verify);
 app.post('/register', login.register);
 
 app.get('/logout', logout.index);
+
+app.get('/dashboard', dashboard.index);
 
 
 // Start the site on port 3000
