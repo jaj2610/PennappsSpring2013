@@ -1,0 +1,29 @@
+body
+{ 
+	background:url('../img/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 7%;
+}
+
+#content {
+  width: 100%;
+}
+
+#left-panel {
+  top: 10px;
+  background-color: white;
+  position: fixed;
+  width: 175px;
+  height: 95%;
+}
+
+#right-panel {
+  margin-left: 200px;
+}
