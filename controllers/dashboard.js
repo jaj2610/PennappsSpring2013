@@ -15,8 +15,10 @@ exports.addDonationGet = function(req, res) {
       res.render('login.html');
 
    } else {
-      var sponsors = db.sponsors.find().toArray();
-      var events = db.events.find().toArray();
+      var sponsors;
+      var events;
+      db.sponsors.find().toArray(function(err, array) { sponsors = array; });
+      db.events.find().toArray(function(err, array) { events = array; });
 
       res.render('adddonation.html', { 'sponsors' : sponsors, 'events' : events });
    }
@@ -63,7 +65,8 @@ exports.addSponsorGet = function(req, res) {
       res.render('login.html');
 
    } else {
-      var sponsors = db.sponsors.find().toArray();
+      var sponsors;
+      db.sponsors.find().toArray(function(err, array) { sponsors = array; } );
 
       res.render('addsponsor.html', { 'sponsors' : sponsors });
    }
