@@ -1,15 +1,17 @@
-npm install sendgrid
+filepicker.setKey('AQ6kiiJGJS1iZl7OgXeAPz');
 
-function sendEmail(toList, userEmail, subjectText, emailText)
-{
-	var sendgrid = require('sendgrid')(jaj2610, statefarm);
-	sendgrid.send({
-		to: toList,
-		from: userEmail,
-		subject: subjectText,
-		text: emailText
-	}, function(err, json) {
-		if (!err) { return console.error(err); }
-			console.log(err);
-	});
+function addAttachment() {
+   filepicker.pick({
+      mimetypes: ['image/*', 'text/plain'],
+      container: 'window',
+      services:['COMPUTER', 'DROPBOX', 'SKYDRIVE', 'GOOGLE_DRIVE', 'GITHUB', 'EVERNOTE', 'FACEBOOK', 'GMAIL', 'WEBCAM'],
+   },
+   function(InkBlob) {
+      console.log(JSON.stringify(InkBlob));
+      document.getElementById('url').value = InkBlob.url;
+      document.getElementById('filename').value = InkBlob.filename;
+   },
+   function(FPError) {
+      console.log(FPError.toString());
+   });
 }

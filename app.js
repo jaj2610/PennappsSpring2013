@@ -4,7 +4,8 @@ var express = require('express')
 // Controllers
 var login = require('./controllers/login')
   , logout = require('./controllers/logout')
-  , dashboard = require('./controllers/dashboard');
+  , dashboard = require('./controllers/dashboard')
+  , email = require('./controllers/email');
 
 var app = express();
 app.use(express.bodyParser());
@@ -37,6 +38,9 @@ app.get('/dashboard/addEvent', dashboard.addEventGet);
 app.post('/dashboard/addEvent', dashboard.addEventPost);
 app.get('/dashboard/addSponsor', dashboard.addSponsorGet);
 app.post('/dashboard/addSponsor', dashboard.addSponsorPost);
+
+app.get('/email.html', email.sendForm);
+app.post('/sendEmail', email.sendEmail);
 
 
 // Start the site on port 3000
