@@ -1,4 +1,4 @@
-var db = require('mongojs').connect('clubhub', ['users', 'donations', 'sponsors', 'events']);
+var db = require('mongojs').connect('clubhub', ['users', 'donations', 'sponsors', 'events', 'clubs']);
 
 // Render basic login page
 exports.index = function(req, res) {
@@ -6,7 +6,16 @@ exports.index = function(req, res) {
       res.render('login.html');
 
    } else {
-      res.end('Welcome, ' + req.session.username + '!');
+      db.sponsors.find().toArray(function(errs, sponsors) {
+         db.events.find().toArray(function(erre, events) {
+            db.donations.find().toArray(function(errd, donations) {
+               res.render('index.html', { 'sponsors'  : sponsors,
+                                          'events'    : events,
+                                          'donations' : donations
+               });
+            });
+         });
+      });
    }
 }
 
@@ -15,6 +24,7 @@ exports.addDonationGet = function(req, res) {
       res.render('login.html');
 
    } else {
+      // These are only nested so that the asychrnous calls complete correctly
       db.sponsors.find().toArray(function(errs, sponsors) {
          db.events.find().toArray(function(erre, events) {
             res.render('adddonation.html', { 'sponsors' : sponsors, 'events' : events });
