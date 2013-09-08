@@ -76,6 +76,18 @@ exports.addEventPost = function(req, res) {
    }
 }
 
+exports.deleteEvent = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else if (req.params.id == null) {
+      res.redirect('/dashboard');
+
+   } else {
+      db.events.remove({ _id : new db.ObjectId(req.params.id) });
+   }
+}
+
 exports.addSponsorGet = function(req, res) {
    if (req.session.username == null) {
       res.render('login.html');
@@ -102,6 +114,18 @@ exports.addSponsorPost = function(req, res) {
       });
 
       res.redirect('/dashboard');
+   }
+}
+
+exports.deleteSponsor = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else if (req.params.id == null) {
+      res.redirect('/dashboard');
+
+   } else {
+      db.sponsors.remove({ _id : new db.ObjectId(req.params.id) });
    }
 }
 
