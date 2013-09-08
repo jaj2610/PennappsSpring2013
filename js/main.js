@@ -6,4 +6,5 @@ $(function() {
 	$( "#sponsoraccordion" ).accordion({
 		collapsible: true
 	});
+	$( ".selector" ).accordion({ clearStyle: true, autoHeight: false });
 });
