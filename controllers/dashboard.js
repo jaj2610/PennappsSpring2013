@@ -233,8 +233,8 @@ exports.editSponsorPost = function(req, res) {
       res.render('login.html');
 
    } else {
-      db.events.update({ _id : new db.ObjectId(req.body.id) },
-                       { $set: { name    : req.body.name,
+      db.sponsors.update({ _id : new db.ObjectId(req.body.id) },
+                       { $set: { name    : req.body.company,
                                  contact : req.body.contact,
                                  email   : req.body.email,
                                  phone   : req.body.phone,
