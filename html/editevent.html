@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Edit Event | ClubHub</title>
+
+    <link href="../css/add.css" rel="stylesheet" type="text/css">
+    <script language="javascript" type="text/javascript" src="../js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/login.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script>
+    $(function() {
+        $("#datepicker").datepicker();
+    });
+    </script>
+</head>
+
+<body>
+
+    <div id="add-box">
+        <form method="POST" action="/dashboard/editEvent">
+            <p id="text">Event name:
+                <input type="text" name="name" id="name">
+            </p>
+            <p id="text">Date:
+                <input type="text" name="date" id="datepicker">
+            </p>
+            <p id="text">Total budget:
+                <input type="text" name="budget">
+            </p>
+
+            <div id="buttons">
+                <input type="submit" value="Edit" id="login-button">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
