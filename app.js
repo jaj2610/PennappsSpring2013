@@ -53,7 +53,7 @@ app.get('/dashboard/editMember', dashboard.editMemberGet);
 app.post('/dashboard/editMember', dashboard.editMemberPost);
 app.get('/dashboard/editOfficer', dashboard.editOfficerGet);
 app.post('/dashboard/editOfficer', dashboard.editOfficerPost);
-app.get('/dashboard/editSponsor', dashboard.editSponsorGet);
+app.get('/dashboard/editSponsor/:id', dashboard.editSponsorGet);
 app.post('/dashboard/editSponsor', dashboard.editSponsorPost);
 app.get('/dashboard/editClub', dashboard.editClubGet);
 app.post('/dashboard/editClub', dashboard.editClubPost);
