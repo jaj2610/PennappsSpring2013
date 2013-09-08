@@ -45,6 +45,8 @@ exports.addDonationPost = function(req, res) {
                           'sponsor_id' : sponsor_id,
                           'event_id'   : event_id
       });
+
+      res.redirect('/dashboard');
    }
 }
 
@@ -66,6 +68,8 @@ exports.addEventPost = function(req, res) {
                        'date'   : req.body.date,
                        'budget' : req.body.budget
       });
+
+      res.redirect('/dashboard');
    }
 }
 
@@ -93,5 +97,7 @@ exports.addSponsorPost = function(req, res) {
          'phone'   : req.body.phone,
          'club_id' : req.body.club
       });
+
+      res.redirect('/dashboard');
    }
 }
