@@ -23,14 +23,15 @@
 
     <div id="add-box">
         <form method="POST" action="/dashboard/editEvent">
+            <input type="hidden" style="display: none; visibility: hidden;" name="id" value="<%= event._id %>" />
             <p id="text">Event name:
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" value="<%= event.name %>">
             </p>
             <p id="text">Date:
-                <input type="text" name="date" id="datepicker">
+                <input type="text" name="date" id="datepicker" value="<%= event.date %>">
             </p>
             <p id="text">Total budget:
-                <input type="text" name="budget">
+                <input type="text" name="budget" value="<%= event.budget %>">
             </p>
 
             <div id="buttons">

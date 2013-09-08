@@ -188,18 +188,19 @@ exports.editEventGet = function(req, res) {
       res.redirect('/dashboard');
 
    } else {
-      db.events.findOne({ _id : req.params.id }, function(err, event) {
+      db.events.findOne({ _id : new db.ObjectId(req.params.id) }, function(err, event) {
          if (err) { console.log(err); }
          res.render('editevent.html', { 'event' : event });
       });
    }
+}
 
 exports.editEventPost = function(req, res) {
    if (req.session.username == null) {
       res.render('login.html');
 
    } else {
-      db.events.update({ _id : req.body.id },
+      db.events.update({ _id : new db.ObjectId(req.body.id) },
                        { $set: { name   : req.body.name,
                                  date   : req.body.date,
                                  budget : req.body.budget
@@ -207,5 +208,7 @@ exports.editEventPost = function(req, res) {
                         },
                         { multi : false }
       );
+
+      res.redirect('/dashboard');
    }
 }
