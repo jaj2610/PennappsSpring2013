@@ -7,7 +7,7 @@ $(function() {
 
 function addAccordionElement(i) {
 	var eventHeader=document.createElement("h3");
-	var eventName=document.createTextNode("<%= events[" + i + "].name %>");
+	var eventName=document.createTextNode(events[i].name);
 	eventHeader.appendChild(eventName);
 
 	var accordionDiv=document.createElement("div");
