@@ -126,3 +126,60 @@ exports.addClubPost = function(req, res) {
       res.redirect('/dashboard');
    }
 }
+
+exports.addMemberGet = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else {
+      var members;
+      db.members.find().toArray(function(err, array) { members = array; } );
+
+      res.render('addmember.html', { 'members' : members });
+   }
+}
+
+exports.addMemberPost = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else {
+      db.members.save({
+         'name'    : req.body.memberName,
+         'email'   : req.body.email,
+         'phone'   : req.body.phone,
+         'club_id' : req.body.club
+      });
+
+      res.redirect('/dashboard');
+   }
+}
+
+exports.addOfficerGet = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else {
+      var officers;
+      db.officers.find().toArray(function(err, array) { officers = array; } );
+
+      res.render('addofficer.html', { 'officers' : officers });
+   }
+}
+
+exports.addOfficerPost = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else {
+      db.officers.save({
+         'name'    : req.body.officerName,
+         'email'   : req.body.email,
+         'phone'   : req.body.phone,
+         'club_id' : req.body.club,
+         'position' : req.body.position
+      });
+
+      res.redirect('/dashboard');
+   }
+}
