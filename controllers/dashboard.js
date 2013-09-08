@@ -102,7 +102,7 @@ exports.addSponsorPost = function(req, res) {
    }
 }
 
-exports.addclubGet = function(req, res) {
+exports.addClubGet = function(req, res) {
    if (req.session.username == null) {
       res.render('login.html');
 
@@ -114,7 +114,7 @@ exports.addclubGet = function(req, res) {
    }
 }
 
-exports.addclubPost = function(req, res) {
+exports.addClubPost = function(req, res) {
    if (req.session.username == null) {
       res.render('login.html');
 
