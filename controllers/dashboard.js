@@ -101,3 +101,28 @@ exports.addSponsorPost = function(req, res) {
       res.redirect('/dashboard');
    }
 }
+
+exports.addclubGet = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else {
+      // These are only nested so that the asychrnous calls complete correctly
+         res.render('addclub.html');
+         });
+      });
+   }
+}
+
+exports.addclubPost = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else {
+
+      db.club.save({ 'name'     : req.body.clubName
+      });
+
+      res.redirect('/dashboard');
+   }
+}
