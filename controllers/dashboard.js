@@ -15,12 +15,11 @@ exports.addDonationGet = function(req, res) {
       res.render('login.html');
 
    } else {
-      var sponsors;
-      var events;
-      db.sponsors.find().toArray(function(err, array) { sponsors = array; });
-      db.events.find().toArray(function(err, array) { events = array; });
-
-      res.render('adddonation.html', { 'sponsors' : sponsors, 'events' : events });
+      db.sponsors.find().toArray(function(errs, sponsors) {
+         db.events.find().toArray(function(erre, events) {
+            res.render('adddonation.html', { 'sponsors' : sponsors, 'events' : events });
+         });
+      });
    }
 }
 
