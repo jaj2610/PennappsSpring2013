@@ -212,3 +212,38 @@ exports.editEventPost = function(req, res) {
       res.redirect('/dashboard');
    }
 }
+
+exports.editSponsorGet = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else if (req.params.id == null) {
+      res.redirect('/dashboard');
+
+   } else {
+      db.sponsors.findOne({ _id : new db.ObjectId(req.params.id) }, function(err, sponsor) {
+         if (err) { console.log(err); }
+         res.render('editsponsor.html', { 'sponsor' : sponsor });
+      });
+   }
+}
+
+exports.editSponsorPost = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else {
+      db.events.update({ _id : new db.ObjectId(req.body.id) },
+                       { $set: { name    : req.body.name,
+                                 contact : req.body.contact,
+                                 email   : req.body.email,
+                                 phone   : req.body.phone,
+                                 club    : req.body.club
+                               }
+                        },
+                        { multi : false }
+      );
+
+      res.redirect('/dashboard');
+   }
+}
