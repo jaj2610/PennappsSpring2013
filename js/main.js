@@ -5,7 +5,7 @@ $(function() {
 	});
 });
 
-function addAccordionElement(i) {
+/*function addAccordionElement(i) {
 	var eventHeader=document.createElement("h3");
 	var eventName=document.createTextNode("<%= events[" + i + "].name %>");
 	eventHeader.appendChild(eventName);
@@ -20,4 +20,4 @@ function addAccordionElement(i) {
 	var accordion=document.getElementById("accordion");
 	accordion.appendChild(eventHeader);
 	accordion.appendChild(accordionDiv);
-}
+}*/

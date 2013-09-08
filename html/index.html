@@ -36,9 +36,21 @@
 		<li><a href="#tabs-3">Donations</a></li>
 		</ul>
 		<div id="tabs-1">
-		<p align="right"><button type="button" onclick="addAccordionElement(0)">Add Event</button> </p>
+		<p align="right"><button type="button">Add Event</button> </p>
 		<div id="accordion">
-		<h3>Grace Hopper</h3>
+			<% for(var i=0; i<events.length; i++) { %>
+				<h3><%= events[i].name %></h3>
+				<div>
+					<p>Date: <%= events[i].date %><br>
+						Budget: <%= events.[i].budget %>
+					</p>
+
+							<p align="right">
+							<button type="button">Edit</button> 
+							<button type="button">Delete</button> </p>
+				</div>
+				<% } %>
+		<!--<h3>Grace Hopper</h3>
 		<div>
 		<p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 
@@ -62,7 +74,7 @@
 		<h3>Section 4</h3>
 		<div>
 		<p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices pos uere cubilia Curae; Aenean lacinia mauris vel est. </p><p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-		</div>
+		</div> -->
 		</div>
 		</div>
 		<div id="tabs-2">
