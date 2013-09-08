@@ -15,7 +15,7 @@ $(function() {
 
 $(function() {
 $( "#accordion-resizer" ).resizable({
-minHeight: 300,
+minHeight: 200,
 minWidth: 200,
 resize: function() {
 $( "#sponsoraccordion" ).accordion( "refresh" );
