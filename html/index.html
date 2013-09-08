@@ -18,6 +18,14 @@
 	ACM<br>
 	Manage Clubs<br>
 
+<ul>
+    <% for(var i=0; i<sponsors.length; i++) { %>
+        <li>
+                <%= sponsors[i].name %>
+        </li>
+    <% } %>
+</ul>
+
 	<%= sponsors[0].name %>
 </div>
 <div id="right-panel">
