@@ -1,4 +1,4 @@
-var db = require('mongojs').connect('clubhub', ['users', 'donations', 'sponsors', 'events', 'clubs']);
+var db = require('mongojs').connect('clubhub', ['users', 'donations', 'sponsors', 'events', 'clubs', 'members']);
 
 // Render basic login page
 exports.index = function(req, res) {
@@ -9,9 +9,12 @@ exports.index = function(req, res) {
       db.sponsors.find().toArray(function(errs, sponsors) {
          db.events.find().toArray(function(erre, events) {
             db.donations.find().toArray(function(errd, donations) {
-               res.render('index.html', { 'sponsors'  : sponsors,
-                                          'events'    : events,
-                                          'donations' : donations
+               db.members.find().toArray(function(errm, members) {
+                  res.render('index.html', { 'sponsors'  : sponsors,
+                                             'events'    : events,
+                                             'donations' : donations,
+                                             'members'   : members
+                  });
                });
             });
          });
