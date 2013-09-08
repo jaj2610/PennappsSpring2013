@@ -46,17 +46,17 @@ app.get('/dashboard/addOfficer', dashboard.addOfficerGet);
 app.post('/dashboard/addOfficer', dashboard.addOfficerPost);
 
 app.get('/dashboard/editDonation', dashboard.editDonationGet);
-app.get('/dashboard/editDonation', dashboard.editDonationPost);
+app.post('/dashboard/editDonation', dashboard.editDonationPost);
 app.get('/dashboard/editEvent', dashboard.editEventGet);
-app.get('/dashboard/editEvent', dashboard.editEventPost);
+app.post('/dashboard/editEvent', dashboard.editEventPost);
 app.get('/dashboard/editMember', dashboard.editMemberGet);
-app.get('/dashboard/editMember', dashboard.editMemberPost);
+app.post('/dashboard/editMember', dashboard.editMemberPost);
 app.get('/dashboard/editOfficer', dashboard.editOfficerGet);
-app.get('/dashboard/editOfficer', dashboard.editOfficerPost);
+app.post('/dashboard/editOfficer', dashboard.editOfficerPost);
 app.get('/dashboard/editSponsor', dashboard.editSponsorGet);
-app.get('/dashboard/editSponsor', dashboard.editSponsorPost);
+app.post('/dashboard/editSponsor', dashboard.editSponsorPost);
 app.get('/dashboard/editClub', dashboard.editClubGet);
-app.get('/dashboard/editClub', dashboard.editClubPost);
+app.post('/dashboard/editClub', dashboard.editClubPost);
 
 app.get('/email.html', email.sendForm);
 app.post('/sendEmail', email.sendEmail);
