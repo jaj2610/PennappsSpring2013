@@ -24,8 +24,6 @@
 		<ul>
 		<li><a href="#tabs-1">Events</a></li>
 		<li><a href="#tabs-2">Sponsors</a></li>
-		<li><a href="#tabs-3">Donations</a></li>
-		<li><a href="#tabs-4">Members</a></li>
 		</ul>
 		<div id="tabs-1">
 		<p align="right"><button type="button">Add Event</button> </p>
@@ -58,41 +56,6 @@
 
 							<p align="right">
 							<button type="button" onclick="document.location.href = '/dashboard/editSponsor/<%= sponsors[i]._id %>'">Edit</button> 
-							<button type="button">Delete</button> </p>
-				</div>
-				<% } %>
-		</div>
-		</div>
-		<div id="tabs-3">
-		<p align="right"><button type="button">Add Donation</button> </p>
-		<div id="donationsaccordion">
-			<% for(var i=0; i<donations.length; i++) { %>
-				<h3><%= donations[i].name %></h3>
-				<div>
-					<p>Company: <%= sponsers.find( { _id: donations[i].sponser_id } ) %><br>
-						Amount: <%= donations[i].amount %>
-					</p>
-
-							<p align="right">
-							<button type="button">Edit</button> 
-							<button type="button">Delete</button> </p>
-				</div>
-				<% } %>
-		</div>
-		</div>
-
-		<div id="tabs-4">
-		<p align="right"><button type="button">Add Donation</button> </p>
-		<div id="membersaccordion">
-			<% for(var i=0; i<members.length; i++) { %>
-				<h3><%= members[i].name %></h3>
-				<div>
-					<p>Company: <%= sponsers.find( { _id: members[i].sponser_id } ) %><br>
-						Amount: <%= members[i].amount %>
-					</p>
-
-							<p align="right">
-							<button type="button">Edit</button> 
 							<button type="button">Delete</button> </p>
 				</div>
 				<% } %>
