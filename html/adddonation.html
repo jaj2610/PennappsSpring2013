@@ -14,15 +14,22 @@
 <div id="add-box">
     <form method="POST" action="dashboard/addDonation">
     	<p id="text">Company: 
-        <select>
-                    <% for(var i=0; i<sponsors.length; i++) { %>
-                        <option value="<%= sponsors[i]._id %>">
-                            <%=sponsors[i].name %>
-                        </option>
-                        <% } %>
-                </select></p>
+        <select name="company">
+           <% for(var i=0; i<sponsors.length; i++) { %>
+              <option value="<%= sponsors[i]._id %>">
+                 <%= sponsors[i].name %>
+              </option>
+           <% } %>
+        </select></p>
     	<p id="text">Donation amount: <input type="text" name="amount" id="amount"></p>
-    	<p id="text">Event: <input type="text" name="event" id="event"></p>
+    	<p id="text">Event:
+        <select name="event">
+           <% for(var i=0; i<events.length; i++) { %>
+              <option value="<%= events[i]._id %>">
+                 <%= events[i].name %>
+              </option>
+           <% } %>
+        </select></p>
 
 		<div id="buttons">
 			<input type="submit" value="Add" id="login-button">
