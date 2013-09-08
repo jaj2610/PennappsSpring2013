@@ -3,8 +3,10 @@ $(function() {
 	$( "#eventaccordion" ).accordion({
 		collapsible: true
 	});
+});
+
+$(function() {
 	$( "#sponsoraccordion" ).accordion({
-		collapsible: true
+	collapsible: true
 	});
-	$(".selector").accordion({ heightStyle: "fill" });
 });
