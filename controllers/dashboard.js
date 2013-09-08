@@ -107,10 +107,7 @@ exports.addClubGet = function(req, res) {
       res.render('login.html');
 
    } else {
-      // These are only nested so that the asychrnous calls complete correctly
-         res.render('addclub.html');
-         });
-      });
+      res.render('addclub.html');
    }
 }
 
@@ -120,8 +117,7 @@ exports.addClubPost = function(req, res) {
 
    } else {
 
-      db.club.save({ 'name'     : req.body.clubName
-      });
+      db.club.save({ 'name' : req.body.clubName });
 
       res.redirect('/dashboard');
    }
