@@ -82,8 +82,7 @@
 		<p align="right"><button type="button" onclick="window.location.href = '/dashboard/addMember'">Add Member</button> </p>
 		<div id="membersaccordion">
 			<% for(var i=0; i<members.length; i++) { %>
-				<h3><%= members[i].name %></h3>
-				<h3><%= members[i].email %></h3>
+				<h3><%= members[i].name %> <a href="/email.html?to=<%= members[i].email %>">(<%= members[i].email %>)</h3>
 				<% } %>
 		</div>
 		</div>
