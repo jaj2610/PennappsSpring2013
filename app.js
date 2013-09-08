@@ -31,6 +31,13 @@ app.get('/logout', logout.index);
 
 app.get('/dashboard', dashboard.index);
 
+app.get('/dashboard/addDonation', dashboard.addDonationGet);
+app.post('/dashboard/addDonation', dashboard.addDonationPost);
+app.get('/dashboard/addEvent', dashboard.addEventGet);
+app.post('/dashboard/addEvent', dashboard.addEventPost);
+app.get('/dashboard/addSponsor', dashboard.addSponsorGet);
+app.post('/dashboard/addSponsor', dashboard.addSponsorPost);
+
 
 // Start the site on port 3000
 app.listen(3000);
