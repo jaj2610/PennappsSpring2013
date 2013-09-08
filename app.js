@@ -40,6 +40,10 @@ app.get('/dashboard/addSponsor', dashboard.addSponsorGet);
 app.post('/dashboard/addSponsor', dashboard.addSponsorPost);
 app.get('/dashboard/addClub', dashboard.addClubGet);
 app.post('/dashboard/addClub', dashboard.addClubPost);
+app.get('/dashboard/addMember', dashboard.addMemberGet);
+app.post('/dashboard/addMember', dashboard.addMemberPost);
+app.get('/dashboard/addOfficer', dashboard.addOfficerGet);
+app.post('/dashboard/addOfficer', dashboard.addOfficerPost);
 
 app.get('/email.html', email.sendForm);
 app.post('/sendEmail', email.sendEmail);

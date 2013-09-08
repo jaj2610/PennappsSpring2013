@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Edit Donation | ClubHub</title>
+
+	<link href="../css/add.css" rel="stylesheet" type="text/css">
+    <script language="javascript" type="text/javascript" src="../js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/login.js"></script>
+</head>
+<body>
+
+<div id="add-box">
+    <form method="POST" action="/dashboard/editDonation">
+    	<p id="text">Company: 
+        <select name="company">
+           <% for(var i=0; i<sponsors.length; i++) { %>
+              <option value="<%= sponsors[i]._id %>">
+                 <%= sponsors[i].name %>
+              </option>
+           <% } %>
+        </select></p>
+    	<p id="text">Donation amount: <input type="text" name="amount" id="amount"></p>
+    	<p id="text">Event:
+        <select name="event">
+           <% for(var i=0; i<events.length; i++) { %>
+              <option value="<%= events[i]._id %>">
+                 <%= events[i].name %>
+              </option>
+           <% } %>
+        </select></p>
+
+		<div id="buttons">
+			<input type="submit" value="Edit" id="login-button">
+	    </div>
+    </form>
+    </div> 
+    </body>
+</html>
