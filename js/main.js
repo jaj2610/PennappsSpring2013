@@ -1,6 +1,9 @@
 $(function() {
 	$( "#tabs" ).tabs();
-	$( "#accordion" ).accordion({
+	$( "#eventaccordion" ).accordion({
+		collapsible: true
+	});
+	$( "#sponsoraccordion" ).accordion({
 		collapsible: true
 	});
 });
