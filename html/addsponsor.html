@@ -15,14 +15,7 @@
 
     <div id="add-box">
         <form method="POST" action="dashboard/addSponsor">
-            <p id="text">Company:
-                <select>
-                    <% for(var i=0; i<sponsors.length; i++) { %>
-                        <option value="<%= sponsors[i]._id %>">
-                            <%=sponsors[i].name %>
-                        </option>
-                        <% } %>
-                </select>
+            <p id="text">Company: <input type="text" name="company" id="company">
             </p>
             <p id="text">Corporate contact:
                 <input type="text" name="contact" id="contact">
