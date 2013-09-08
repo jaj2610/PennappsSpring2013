@@ -35,7 +35,7 @@
 							<p align="right">
 							<button type="button" onclick="document.location.href = '/email.html'">Email</button> 
 							<button type="button" onclick="document.location.href = '/dashboard/editEvent/<%= events[i]._id %>'">Edit</button> 
-							<button type="button">Delete</button> </p>
+							<button type="button" onclick="document.location.href = '/dashboard/deleteEvent/<%= events[i]._id %>'">Delete</button> </p>
 				</div>
 				<% } %>
 		</div>
@@ -54,7 +54,7 @@
 
 							<p align="right">
 							<button type="button" onclick="document.location.href = '/dashboard/editSponsor/<%= sponsors[i]._id %>'">Edit</button> 
-							<button type="button">Delete</button> </p>
+							<button type="button" onclick="document.location.href = '/dashboard/deleteSponsor/<%= sponsors[i]._id %>'">Delete</button> </p>
 				</div>
 				<% } %>
 		</div>
@@ -72,7 +72,7 @@
 		<p align="right"><button type="button" onclick="window.location.href = '/dashboard/addMember'">Add Member</button> </p>
 		<div id="membersaccordion">
 			<% for(var i=0; i<members.length; i++) { %>
-				<h3><%= members[i].name %> <a href="/email.html?to=<%= members[i].email %>">(<%= members[i].email %>)</a></h3>
+				<h3><%= members[i].name %> (<a href="/email.html?to=<%= members[i].email %>"><%= members[i].email %></a>)</h3>
 				<% } %>
 		</div>
 		</div>
