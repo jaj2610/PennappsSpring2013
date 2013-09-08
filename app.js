@@ -47,7 +47,7 @@ app.post('/dashboard/addOfficer', dashboard.addOfficerPost);
 
 app.get('/dashboard/editDonation', dashboard.editDonationGet);
 app.post('/dashboard/editDonation', dashboard.editDonationPost);
-app.get('/dashboard/editEvent', dashboard.editEventGet);
+app.get('/dashboard/editEvent/:id', dashboard.editEventGet);
 app.post('/dashboard/editEvent', dashboard.editEventPost);
 app.get('/dashboard/editMember', dashboard.editMemberGet);
 app.post('/dashboard/editMember', dashboard.editMemberPost);

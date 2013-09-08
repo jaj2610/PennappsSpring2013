@@ -179,3 +179,33 @@ exports.addOfficerPost = function(req, res) {
       res.redirect('/dashboard');
    }
 }
+
+exports.editEventGet = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else if (req.params.id == null) {
+      res.redirect('/dashboard');
+
+   } else {
+      db.events.findOne({ _id : req.params.id }, function(err, event) {
+         if (err) { console.log(err); }
+         res.render('editevent.html', { 'event' : event });
+      });
+   }
+
+exports.editEventPost = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else {
+      db.events.update({ _id : req.body.id },
+                       { $set: { name   : req.body.name,
+                                 date   : req.body.date,
+                                 budget : req.body.budget
+                               }
+                        },
+                        { multi : false }
+      );
+   }
+}
