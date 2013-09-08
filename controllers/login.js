@@ -14,7 +14,7 @@ exports.index = function(req, res) {
 
 // Render a basic register page
 exports.registration = function(req, res) {
-   res.render('registration.html');
+   res.render('/registration.html');
 }
 
 exports.register = function(req, res) {
@@ -37,6 +37,7 @@ exports.register = function(req, res) {
    });
 }
 
+// Verify that the provided credentials are 	
 exports.verify = function(req, res) {
    var username = req.body.username.toLowerCase();
    var password = SHA3(req.body.password).toString(CryptoJS.enc.Hex);

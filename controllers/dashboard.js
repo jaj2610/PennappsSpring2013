@@ -45,6 +45,8 @@ exports.addDonationPost = function(req, res) {
                           'sponsor_id' : sponsor_id,
                           'event_id'   : event_id
       });
+
+      res.redirect('/dashboard');
    }
 }
 
@@ -66,6 +68,8 @@ exports.addEventPost = function(req, res) {
                        'date'   : req.body.date,
                        'budget' : req.body.budget
       });
+
+      res.redirect('/dashboard');
    }
 }
 
@@ -93,5 +97,32 @@ exports.addSponsorPost = function(req, res) {
          'phone'   : req.body.phone,
          'club_id' : req.body.club
       });
+
+      res.redirect('/dashboard');
+   }
+}
+
+exports.addclubGet = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else {
+      // These are only nested so that the asychrnous calls complete correctly
+         res.render('addclub.html');
+         });
+      });
+   }
+}
+
+exports.addclubPost = function(req, res) {
+   if (req.session.username == null) {
+      res.render('login.html');
+
+   } else {
+
+      db.club.save({ 'name'     : req.body.clubName
+      });
+
+      res.redirect('/dashboard');
    }
 }

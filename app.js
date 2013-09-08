@@ -38,6 +38,8 @@ app.get('/dashboard/addEvent', dashboard.addEventGet);
 app.post('/dashboard/addEvent', dashboard.addEventPost);
 app.get('/dashboard/addSponsor', dashboard.addSponsorGet);
 app.post('/dashboard/addSponsor', dashboard.addSponsorPost);
+app.get('/dashboard/addClub', dashboard.addClubGet);
+app.post('/dashboard/addClub', dashboard.addClubPost);
 
 app.get('/email.html', email.sendForm);
 app.post('/sendEmail', email.sendEmail);
