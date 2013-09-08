@@ -5,7 +5,7 @@ var SHA3 = require('crypto-js/sha3');
 // Render basic login page
 exports.index = function(req, res) {
    if (req.session.username == null) {
-      res.render('/login.html');
+      res.render('login.html');
 
    } else {
       res.redirect('/dashboard');
