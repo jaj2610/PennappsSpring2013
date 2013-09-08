@@ -7,7 +7,8 @@ exports.sendForm = function(req, res) {
    if (req.session.username == null) {
       res.render('login.html');
    } else {
-      res.render('email.html');
+      var to = (req.query.to !== undefined ? req.query.to : '')
+      res.render('email.html', { to : to });
    }
 }
 
