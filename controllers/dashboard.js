@@ -85,6 +85,7 @@ exports.deleteEvent = function(req, res) {
 
    } else {
       db.events.remove({ _id : new db.ObjectId(req.params.id) });
+      res.redirect('/dashboard');
    }
 }
 
@@ -126,6 +127,7 @@ exports.deleteSponsor = function(req, res) {
 
    } else {
       db.sponsors.remove({ _id : new db.ObjectId(req.params.id) });
+      res.redirect('/dashboard');
    }
 }
 
