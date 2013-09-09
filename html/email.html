@@ -8,13 +8,13 @@
 	<link href="../css/login.css" rel="stylesheet" type="text/css">
     <script language="javascript" type="text/javascript" src="../js/jquery.js"></script>
     <script language="javascript" type="text/javascript" src="../js/email.js"></script>
-    
+   
 </head>
 <body>
 
     <div id="login-box">
         <form method="POST" action="sendEmail">
-    	<p id="text">To: <input type="text" name="to" id="to" value="<%= to %>"></p>
+    	<p id="text">To: <input type="text" name="to" id="to" value="<% if (typeof(to) !== 'undefined') { %> <%= to %> <% } %>"></p>
 
         <p id="text">From: <input type="text" name="from" id="from"></p>
 
